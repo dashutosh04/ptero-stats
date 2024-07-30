@@ -4,9 +4,9 @@
   "description": "Fetches node, user, and server counts from a Pterodactyl Panel instance using the pterodactyl.js library.",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "pterodactyl.js": "^2.1.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
