@@ -1,0 +1,28 @@
+{
+  "name": "ptero-stats",
+  "version": "1.0.0",
+  "description": "Fetches node, user, and server counts from a Pterodactyl Panel instance using the pterodactyl.js library.",
+  "main": "index.js",
+  "dependencies": {
+    "pterodactyl.js": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashutosh04/ptero-stats.git"
+  },
+  "keywords": [
+    "pterodactyl",
+    "ptero-stats",
+    "node-stats"
+  ],
+  "author": "dashutosh04",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dashutosh04/ptero-stats/issues"
+  },
+  "homepage": "https://github.com/dashutosh04/ptero-stats#readme"
+}
