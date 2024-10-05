@@ -6,19 +6,24 @@ const client = new ptero.Builder()
   .setAPIKey(process.env.API_KEY)
   .asAdmin();
 
-async function data_fetcher(client) {
-  nodes = await client.getNodes();
-  users = await client.getUsers();
-  servers = await client.getServers();
+  async function data_fetcher(client) {
+    return Promise.all([
+      client.getNodes(),
+      client.getUsers(),
+      client.getServers(),
+    ])
+    .then(([nodes, users, servers]) => {
+      return {
+        node: nodes[0].pagination.total,
+        user: users[0].pagination.total,
+        server: servers[0].pagination.total,
+      };
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
+  }
 
-  data = {
-    node: nodes.length,
-    user: users.length,
-    server: servers.length,
-  };
-  return data;
-}
-
-data_fetcher(client).then(async (stats) => {
+data_fetcher(client).then((stats) => {
   console.log(stats);
 });
